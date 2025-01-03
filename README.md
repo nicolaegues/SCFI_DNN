@@ -32,7 +32,8 @@ If not familiar with the framework it is recommended to go through the input opt
 
 For details on the data used, see the "Data" subsection in the report. 
 
-- gentamycin_folders, kanamycin_folders, trimethoprim_folders: each of these lists stores all Data-folder names for the corresponding antibiotic. Here, this includes 10 folder-names corresponding to the 10 E-coli strains treated with Gentamycin, and 3 folders for Kanamycin and Trimethoprim corresponding to the 3 repeats. 
+- gentamycin_folders, kanamycin_folders, trimethoprim_folders: 
+    - each of these lists stores all Data-folder names for the corresponding antibiotic. Here, this includes 10 folder-names corresponding to the 10 E-coli strains treated with Gentamycin, and 3 folders for Kanamycin and Trimethoprim corresponding to the 3 repeats. 
 - genta_y, kana_y, trime_y: The corresponding resistant (1) or susceptible (0) labels. 
     - For Gentamycin, the labelling is done based on MIC values: those strains with a MIC under 16 were are classified as susceptible 16 or over as resistant. 
     - For Kanamycin and Trimethoprim the data structure is more complicated: the data for "resistant" and "susceptible" are contained (stacked) each repeat folder. To handle this later, two folder names (for resistant and suceptible) are created for each repeat (for more details see the "pre_processing" function.)
