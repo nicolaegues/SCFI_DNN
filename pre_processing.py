@@ -10,15 +10,13 @@ from set_variables import get_variables
 
 v = get_variables()
 
-directory = v.directory
+directory = v.data_directory
 
 antibiotic = v.antibiotic
 antibiotics_dict = v.antibiotics_dict
 nn_params = v.nn_params
 keyword = v.keyword
-all_keywords = v.all_keywords
 equal_Genta = v.equal_Genta
-filter_keyword = v.filter_keyword
 split_timeseries = v.split_timeseries
 split_ACF = v.split_ACF
 flatten = v.flatten
@@ -94,22 +92,17 @@ def param_data_processing(save = "no"):
         sorted_files = sorted(files, key=lambda s: int(p1.search(s).groups()[0]))
 
         keyword_pattern = re.compile(keyword)
-        all_keyword_pattern = re.compile("|".join(re.escape( k )for k in all_keywords))
         rot_pattern =  re.compile("rot_300x4")
 
-        if filter_keyword == True: 
 
-            if keyword == "300x4": 
-                 sorted_files = [file for file in sorted_files if (keyword_pattern.search(file)) and not (rot_pattern.search(file))]
-            else:
+        #keyword filtering
+        if keyword == "300x4": 
+                sorted_files = [file for file in sorted_files if (keyword_pattern.search(file)) and not (rot_pattern.search(file))]
+        else:
 
-                sorted_files = [file for file in sorted_files if (keyword_pattern.search(file))]
+            sorted_files = [file for file in sorted_files if (keyword_pattern.search(file))]
 
-        
-        #this if for the normal 20x20 case (where this is no keyword present)
-        else: 
-            #THIS COULD BE WRONG - CHECK!
-            sorted_files = [file for file in sorted_files if not (all_keyword_pattern.search(file)) ]
+
 
         #only keeps files of selected parameters
         #fit_files = []

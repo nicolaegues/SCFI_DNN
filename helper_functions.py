@@ -4,6 +4,32 @@ from sklearn.model_selection import train_test_split, StratifiedKFold
 from dnn_models import CNN_Model, LSTM_Model, GRU_Model, C3D_Model, C1D_Model, fcsnet
 
 
+def res_sus_distinguisher(ab_names):
+        
+    new_names = []
+    yvals = []
+    for name in ab_names: 
+
+        new_names.append(name + "_r")
+        yvals.append(1)
+
+        new_names.append(name + "_s")
+        yvals.append(0)
+    
+    return new_names, yvals
+
+
+def print_input_summary(antibiotic, method, nn_params, ROI, fit): 
+
+    print("NN classes: 0-susceptible and 1-resistant")
+    print("Antibiotic(s) considered: ", antibiotic)
+    print("Method chosen: ", method)
+    print("Params to be processed and inputted into NN: ", nn_params)
+    print("ROI size:", ROI)
+    print("Fit used: ", fit)
+
+
+
 class CustomDataset(Dataset):
     def __init__(self, X, Y, transform=None):
         self.X = X
