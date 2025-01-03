@@ -8,14 +8,14 @@ directory = "D:/Saved arrays"
 
 #Gentamycin 01-10 correspond to these MIC values (in this order): 1, 1, 4, 16, 32, 2, 8, 64, 4, 8 (µg/ml)
 #whereby susceptible < MIC 16 <= resistant
-gentamycin= ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
+gentamycin_folders= ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
 genta_y = [0, 0, 0, 1, 1, 0, 0, 1, 0, 0]
 
-kanamycin = ["fig4 kanamycin1", "fig4 kanamycin2", "fig4 kanamycin3"]
-trimethoprim =  ["S3", "S4", "S5"]
+kanamycin_folders = ["fig4 kanamycin1", "fig4 kanamycin2", "fig4 kanamycin3"]
+trimethoprim_folders =  ["S3", "S4", "S5"]
 
-kana_res_sus, kana_y = res_sus_distinguisher(kanamycin)
-trime_res_sus, trime_y = res_sus_distinguisher(trimethoprim)
+kana_res_sus, kana_y = res_sus_distinguisher(kanamycin_folders)
+trime_res_sus, trime_y = res_sus_distinguisher(trimethoprim_folders)
 
 
 def_antibiotic = "Trimethoprim"
@@ -42,7 +42,7 @@ class Variables():
         self.spreadsheets_dir = "D:\Data spreadsheets"
 
         self.antibiotics_dict = {
-            "Gentamycin": {"folders": gentamycin, "y_vals": genta_y},
+            "Gentamycin": {"folders": gentamycin_folders, "y_vals": genta_y},
             "Kanamycin": {"folders": kana_res_sus, "y_vals": kana_y},
             "Trimethoprim": {"folders": trime_res_sus, "y_vals": trime_y},
         }
