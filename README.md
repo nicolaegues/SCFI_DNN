@@ -56,12 +56,12 @@ If not familiar with the framework it is recommended to go through the input opt
     - "pf-LSTM": flattened params for each vid. DOES NOT WORK
 
 - fit: ()
-    "single": single exponential fit
-    "double": double exponential fit
-    "2DTIRF": 2D TIRF (with G_inf)
-    "3DTIRF": 3D TIRF (no G_inf)
-    "2Dcutsigma": 2D TIRF whereby first point of ACFs were cut off and fit was forced through the second point (first point in new ACF)
-    "none": when either ACFs or timeseries wants to be inputted. Mostly because these were only saved for one fit.
+    - "single": single exponential fit
+    - "double": double exponential fit
+    - "2DTIRF": 2D TIRF (with G_inf)
+    - "3DTIRF": 3D TIRF (no G_inf)
+    - "2Dcutsigma": 2D TIRF whereby first point of ACFs were cut off and fit was forced through the second point (first point in new ACF)
+    - "none": when either ACFs or timeseries wants to be inputted. Mostly because these were only saved for one fit.
 
 - nn_params: ()
     "m_mono", "t_mono" belong to the single exponential fit. 
@@ -72,7 +72,7 @@ If not familiar with the framework it is recommended to go through the input opt
     "timeseries": intensity timeseries
     "ACF": Autocorrelation function
 
-**Method-dependant variables:** 
+<u>*Method-dependant variables:</u>
 
 - model, flatten, split_ACF, split_timeseries
 
