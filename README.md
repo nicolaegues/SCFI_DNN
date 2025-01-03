@@ -72,11 +72,12 @@ If not familiar with the framework it is recommended to go through the input opt
     "timeseries": intensity timeseries
     "ACF": Autocorrelation function
 
-<u>Method-dependant variables:</u>
+Method-dependant variables:
 
 - model, flatten, split_ACF, split_timeseries
 
 Given that various methods use the same DNN model, an additional variable specifying the model is set based on the method. This is for ease of use later.
+
 The latter three parameters are boolean variables used in the pre_processing function to get the data into the correct format, depending on which DNN method is chosen. More info in the pre_processing section. 
 
 #### More permanent parameters
@@ -85,32 +86,32 @@ The latter three parameters are boolean variables used in the pre_processing fun
 
 These are set directly either in the "Variables" or the "Hyperparameters" classes. 
 
-- self.spec_thresh = 0.5
-- self.use_thresh = False
+    - self.spec_thresh = 0.5
+    - self.use_thresh = False
 
-- self.equal_Genta = True
-- self.cross_val = False
+    - self.equal_Genta = True
+    - self.cross_val = False
 
-- self.validation = True
-- self.get_shap = True
-- self.get_splits_i = True
-- self.save_splits = False
-- self.save_res = True
+    - self.validation = True
+    - self.get_shap = True
+    - self.get_splits_i = True
+    - self.save_splits = False
+    - self.save_res = True
 
 
 hyperparams:
 
-- self.lstm_A_lr=0.005
-- self.lstm_early_stop_thresh = 10
-- self.lstm_max_epochs = 100
+    - self.lstm_A_lr=0.005
+    - self.lstm_early_stop_thresh = 10
+    - self.lstm_max_epochs = 100
 
-- self.cnn_A_lr = 0.0005
-- self.cnn_early_stop_thresh = 10#5normal
-- self.cnn_max_epochs = 50 #30 normal
+    - self.cnn_A_lr = 0.0005
+    - self.cnn_early_stop_thresh = 10#5normal
+    - self.cnn_max_epochs = 50 #30 normal
 
-- self.optimizer = torch.optim.Adam()
-- self.loss_fn = torch.nn.CrossEntropyLoss()
-- self.k_folds = 5
+    - self.optimizer = torch.optim.Adam()
+    - self.loss_fn = torch.nn.CrossEntropyLoss()
+    - self.k_folds = 5
 
 ## 2. Pre-processing
 
