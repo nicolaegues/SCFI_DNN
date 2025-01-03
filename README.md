@@ -72,7 +72,7 @@ If not familiar with the framework it is recommended to go through the input opt
     "timeseries": intensity timeseries
     "ACF": Autocorrelation function
 
-<u>*Method-dependant variables:</u>
+<u>Method-dependant variables:</u>
 
 - model, flatten, split_ACF, split_timeseries
 
