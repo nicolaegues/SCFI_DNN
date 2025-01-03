@@ -1,5 +1,5 @@
 
-## SCFIDNN: A deep Learning AST model for SCFI data
+# SCFIDNN: A deep Learning AST model for SCFI data
 
 Classifies whether a strain (in this case E.coli) is resistant or susceptible to the antibiotics Kanamycin, Trimethorpim, and Gentamycin, based on data gathered from the Sub-Cellular Fluctuation Imaging technique developed at the University of Bristol. 
 
@@ -9,17 +9,16 @@ Pre-requesites:
 
 MORE DESCRIPTION (esp of Arthur's code)
 
-### How to run
+## How to run
 
 To (), run the "SCFIDNN_run_script.py" script. 
 
-### ()
-
+## 1. Setting of variables
 Before running the code, parameters need to be specified in the "set_variables.py" script.
 
-#### Parameters: 
+### Parameters: 
 
-##### Data and labels
+#### Data and labels
 
 For details on the data used for the Autocorrelation analysis, see the "Data" subsection in the report. 
 
@@ -37,7 +36,7 @@ The folders and corresponding labels for each antibiotic are then stored in a ne
 - spreadsheets_dir: 
 
 
-##### Non-permanent parameters 
+#### Non-permanent parameters 
 
 The following five parameters can either be set to default values (specified at the beginning of the "set_variables.py" script), or set while running via user-input choices. 
 If not familiar with the framework it is recommended to go through the input options, as a few methods are dependent on other specific setting, and all the possible options are also listed for an overview. 
@@ -73,13 +72,49 @@ If not familiar with the framework it is recommended to go through the input opt
     "timeseries": intensity timeseries
     "ACF": Autocorrelation function
 
-----------------------------------------------------------
+**Method-dependant variables:** 
 
-** Variables that depend on the method **: 
+- model, flatten, split_ACF, split_timeseries
+
+Given that various methods use the same DNN model, an additional variable specifying the model is set based on the method. This is for ease of use later.
+The latter three parameters are boolean variables used in the pre_processing function to get the data into the correct format, depending on which DNN method is chosen. More info in the pre_processing section. 
+
+#### More permanent parameters
+
+()
+
+These are set directly either in the "Variables" or the "Hyperparameters" classes. 
+
+- self.spec_thresh = 0.5
+- self.use_thresh = False
+
+- self.equal_Genta = True
+- self.cross_val = False
+
+- self.validation = True
+- self.get_shap = True
+- self.get_splits_i = True
+- self.save_splits = False
+- self.save_res = True
 
 
+hyperparams:
 
+- self.lstm_A_lr=0.005
+- self.lstm_early_stop_thresh = 10
+- self.lstm_max_epochs = 100
 
+- self.cnn_A_lr = 0.0005
+- self.cnn_early_stop_thresh = 10#5normal
+- self.cnn_max_epochs = 50 #30 normal
+
+- self.optimizer = torch.optim.Adam()
+- self.loss_fn = torch.nn.CrossEntropyLoss()
+- self.k_folds = 5
+
+## 2. Pre-processing
+
+## 3. Running the DNN
 
 
 
