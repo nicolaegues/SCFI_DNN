@@ -64,13 +64,13 @@ If not familiar with the framework it is recommended to go through the input opt
     - "none": when either ACFs or timeseries wants to be inputted. Mostly because these were only saved for one fit.
 
 - nn_params: ()
-    "m_mono", "t_mono" belong to the single exponential fit. 
-    "m1", "m2", "t1", "t2" belong to the double exponential fit. 
-    "N", "kappa", "tD" belong to the TIRF fit (3D or 2D)
-    "g0", "intensities": fit-independent
-    "R": Rsquared
-    "timeseries": intensity timeseries
-    "ACF": Autocorrelation function
+    - "m_mono", "t_mono" belong to the single exponential fit. 
+    - "m1", "m2", "t1", "t2" belong to the double exponential fit. 
+    - "N", "kappa", "tD" belong to the TIRF fit (3D or 2D)
+    - "g0", "intensities": fit-independent
+    - "R": Rsquared
+    - "timeseries": intensity timeseries
+    - "ACF": Autocorrelation function
 
 Method-dependant variables:
 
@@ -86,12 +86,12 @@ The latter three parameters are boolean variables used in the pre_processing fun
 
 These are set directly either in the "Variables" or the "Hyperparameters" classes. 
 
+- General:
+
     - self.spec_thresh = 0.5
     - self.use_thresh = False
-
     - self.equal_Genta = True
     - self.cross_val = False
-
     - self.validation = True
     - self.get_shap = True
     - self.get_splits_i = True
@@ -99,16 +99,14 @@ These are set directly either in the "Variables" or the "Hyperparameters" classe
     - self.save_res = True
 
 
-hyperparams:
+- hyperparams:
 
     - self.lstm_A_lr=0.005
     - self.lstm_early_stop_thresh = 10
     - self.lstm_max_epochs = 100
-
     - self.cnn_A_lr = 0.0005
     - self.cnn_early_stop_thresh = 10#5normal
     - self.cnn_max_epochs = 50 #30 normal
-
     - self.optimizer = torch.optim.Adam()
     - self.loss_fn = torch.nn.CrossEntropyLoss()
     - self.k_folds = 5
