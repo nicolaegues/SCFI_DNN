@@ -24,7 +24,7 @@ Running "SCFIDNN_run_script.py" will give the user two options on how to set the
 - One can either resort to default values, which are pre-emptively specified at the beginning of the "set_variables.py" script (those starting with "def_"), 
 - or one can choose to be guided through the possible options via user input. 
 
-If not familiar with the framework it is recommended to go through the input options, as a few methods are dependent on other specific settings. 
+If not familiar with the framework it is recommended to go through the input options, as a few methods are dependent on other specific settings (and all the possible options are also listed).
 
 Parameters: 
 
