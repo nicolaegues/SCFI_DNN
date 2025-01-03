@@ -1,5 +1,21 @@
 
 
+
+def res_sus_distinguisher(ab_names):
+        
+    new_names = []
+    yvals = []
+    for name in ab_names: 
+
+        new_names.append(name + "_r")
+        yvals.append(1)
+
+        new_names.append(name + "_s")
+        yvals.append(0)
+    
+    return new_names, yvals
+
+
 def print_input_summary(antibiotic, method, nn_params, ROI, fit): 
 
     print("NN classes: 0-susceptible and 1-resistant")
@@ -122,16 +138,3 @@ def set_choices_vars(method, filter_keyword):
 
 
 
-def res_sus_distinguisher(ab_names):
-        
-    new_names = []
-    yvals = []
-    for name in ab_names: 
-
-        new_names.append(name + "_r")
-        yvals.append(1)
-
-        new_names.append(name + "_s")
-        yvals.append(0)
-    
-    return new_names, yvals
